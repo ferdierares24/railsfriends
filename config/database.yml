@@ -26,7 +26,7 @@ production:
   primary:
     adapter: postgresql
     encoding: unicode
-    pool: 5
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
     url: postgresql://railfriends_user:OC0hvW3bvF2TicPk8Vgq5uXAoLuqvZOi@dpg-d8u10kmrnols73blaa30-a.oregon-postgres.render.com/railfriends    
     #<<: *default
     #database: storage/production.sqlite3
